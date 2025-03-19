@@ -228,4 +228,5 @@ elif variacaoPercentual < -10:
     print('Corte de gastos.')
 else:
     print('Variação não identificada.')
-    
+
+print('Fim dos projetos')
