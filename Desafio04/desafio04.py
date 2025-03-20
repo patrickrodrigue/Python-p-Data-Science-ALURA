@@ -93,8 +93,44 @@ for i in range(1, 11):
 print(f'Total de doces amargos são {amargos} é de doces são {doces}')
 
 #Desenvolva um programa que informa a nota de um(a) aluno(a) de acordo com suas respostas. Ele deve pedir a resposta desse(a) aluno(a) para cada questão e é preciso verificar se a resposta foi igual ao gabarito. Cada questão vale um ponto e existem as alternativas A, B, C ou D.
-gabarito = ['D, A, C, B, A, D, C, C, A, B,']
+gabarito = ['D', 'A', 'C', 'B', 'A', 'D', 'C','C', 'A', 'B']
 nota = 0
-for i in range(1, 11):
-    resposta = input(f'Digite a resposta da questão {i}:')
-    resposta.upper()
+respostas = []
+for i in range(10):
+    i = input(f'Digite a resposta da questão {i+1}:').upper()
+    respostas.append(i)
+for i in range(10):
+    if respostas[i] == gabarito[i]:
+        nota+=1
+    
+print(f'a nota do(a) aluno foi {nota}')
+
+#Um instituto de meteorologia deseja fazer um estudo de temperatura média de cada mês do ano. Para isso, você precisa fazer um código que colete e armazene essas temperaturas médias em uma lista. Depois, calcule a média anual das temperaturas e mostre todas as temperaturas acima da média anual e em que mês elas ocorreram, mostrando os meses por extenso (Janeiro, Fevereiro, etc.).
+mes = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+temperatua_media = []
+for i in range (12):
+    i = float(input(f'Informe a temperatura media do mes {i+1}: '))
+    temperatua_media.append(i)
+    media=sum(temperatua_media)/len(temperatua_media)
+for i in range(12):
+    if temperatua_media[i] > media:
+        print(f'Os meses foram {mes[i]}')
+
+#Uma empresa de e-commerce está interessada em analisar as vendas dos seus produtos. Os dados das vendas foram armazenados em um dicionário:
+#{'Produto A': 300, 'Produto B': 80, 'Produto C': 60,
+ #'Produto D': 200, 'Produto E': 250, 'Produto F': 30}
+#Escreva um código que calcule o total de vendas e o produto mais vendido.
+vendas = {'Produto A': 300, 'Produto B': 80, 'Produto C': 60, 
+          'Produto D': 200, 'Produto E': 250, 'Produto F': 30}
+total = 0
+produto_mais_vendido = ''
+produtos_vendidos = 0
+
+for i in vendas.keys():
+    total += vendas[i]
+    if vendas[i] > produtos_vendidos:
+        produtos_vendidos = vendas[i]
+        produto_mais_vendido = i
+print(f'O total de vendas: {total}')
+print(f'O produto mais vendido: {produto_mais_vendido}')
+
