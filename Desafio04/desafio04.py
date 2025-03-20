@@ -70,7 +70,7 @@ if(data):
 else:
     print('Data Inválida')
 
-#print('MOMENTO DOS PROJETOS')
+print('MOMENTO DOS PROJETOS')
 
 # Para um estudo envolvendo o nível de multiplicação de bactérias em uma colônia, foi coletado o número de bactérias por dia (em milhares) e pode ser observado a seguir: [1.2, 2.1, 3.3, 5.0, 7.8, 11.3, 16.6, 25.1, 37.8, 56.9]. Tendo esses valores, faça um código que gere uma lista contendo o percentual de crescimento de bactérias por dia, comparando o número de bactérias em cada dia com o número de bactérias do dia anterior. Dica: para calcular o percentual de crescimento usamos a seguinte equação: 100 * (amostra_atual - amostra_passada) / (amostra_passada).
 numeros_bacterias = [1.2, 2.1, 3.3, 5.0, 7.8, 11.3, 16.6, 25.1, 37.8, 56.9]
@@ -80,3 +80,21 @@ for i in range(1, len(numeros_bacterias)):
     crescimento.append(calculo)
 for i, crescimento in enumerate(crescimento,start=1):
     print(f'Crescimento do dia {i}: {crescimento:.2f}%')
+
+#Para uma seleção de produtos alimentícios, precisamos separar o conjunto de IDs dados por números inteiros sabendo que os produtos com ID par são doces e os com ID ímpar são amargos. Monte um código que colete 10 IDs. Depois, calcule e mostre a quantidade de produtos doces e amargos.
+doces = 0
+amargos = 0 
+for i in range(1, 11):
+    ids = int(input('Digite o id:'))
+    if ids % 2 == 0:
+        doces+=1
+    else:
+        amargos+=1
+print(f'Total de doces amargos são {amargos} é de doces são {doces}')
+
+#Desenvolva um programa que informa a nota de um(a) aluno(a) de acordo com suas respostas. Ele deve pedir a resposta desse(a) aluno(a) para cada questão e é preciso verificar se a resposta foi igual ao gabarito. Cada questão vale um ponto e existem as alternativas A, B, C ou D.
+gabarito = ['D, A, C, B, A, D, C, C, A, B,']
+nota = 0
+for i in range(1, 11):
+    resposta = input(f'Digite a resposta da questão {i}:')
+    resposta.upper()
